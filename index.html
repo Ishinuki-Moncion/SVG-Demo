@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://cdn.jsdelivr.net/npm/kute.js@2.1.2/dist/kute.min.js"></script>
+
+
+
+    <style>
+
+        body {
+            color: white; /*text color will be light*/
+            background: #202731; /*background will be dark*/
+            margin: 0; 
+        }
+        section {
+            position: relative; /*allows its children to be positioned within it*/
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            min-height: 400px;
+            padding-top: 100px;
+        }
+
+        .pink {
+            background: #ff0066;
+        }
+
+        .dark {
+            background: #0f0f10;
+        }
+
+        .custom-shape {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            overflow: hidden;
+            line-height: 0;
+        }
+
+        .custom-shape svg {
+            position: relative;
+            display: block;
+            width: calc(141% + 1.3px);
+            height: 209px;
+        }
+
+        .custom-shape .shape-fill {
+            fill: #0f0f10;
+        }
+
+        .spacer {
+        aspect-ratio: 960/300;
+        width: 100%;
+        background-repeat: no-repeat;
+        background-position: center;
+        background-size: cover;
+      }
+
+      .layered-peaks-haikei-1 {
+        background-image: url('./layered-peaks-haikei-1.svg');
+      }
+
+      .flip {
+        transform: rotate(180deg);
+      }
+
+      
+
+    </style>
+</head>
+<body>
+    <section class="dark">
+        <h1>Curves</h1>
+        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quo libero, error vitae totam deleniti aspernatur excepturi dolores illum soluta rem, quia architecto inventore repellat consequatur natus voluptas ex accusamus fugiat.</p>
+    </section>
+
+    <section >
+        <h1>Curves</h1>
+        <p>Magni debitis quidem ducimus delectus ex cum ad possimus, dicta, inventore natus excepturi ab dolores temporibus rem iure aliquam. Ab dicta illo, sunt enim eos necessitatibus vel possimus nesciunt! Cumque?</p>
+        <div class="custom-shape">
+            <svg data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 120" preserveAspectRatio="none">
+                <path
+                    d="M321.39,56.44c58-10.79,114.16-30.13,172-41.86,82.39-16.72,168.19-17.73,250.45-.39C823.78,31,906.67,72,985.66,92.83c70.05,18.48,146.53,26.09,214.34,3V0H0V27.35A600.21,600.21,0,0,0,321.39,56.44Z"
+                    class="shape-fill"></path>
+            </svg>
+        </div>
+    </section>
+
+    <div class="spacer layered-peaks-haikei-1 flip"></div> 
+    
+    <section class="pink">
+        <h1>Curves</h1>
+        <p>Quisquam similique cumque corporis debitis animi numquam perferendis ex asperiores eius est, delectus deleniti ullam quod itaque laudantium beatae nisi doloremque quia, exercitationem perspiciatis. Laboriosam quae provident facere nemo ducimus!</p>
+        <svg id="visual" viewBox="0 0 960 300" width="960" height="300" xmlns="http://www.w3.org/2000/svg"
+            xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1">
+            <g transform="translate(491.8798879754024 157.92646553622797)">
+                <path id="blob1"
+                    d="M82.7 -94.6C95.2 -70.2 85.1 -35.1 84.3 -0.8C83.5 33.5 91.9 66.9 79.4 86.4C66.9 105.9 33.5 111.5 -0.9 112.4C-35.4 113.4 -70.7 109.7 -90.9 90.2C-111 70.7 -116 35.4 -110.7 5.3C-105.4 -24.7 -89.8 -49.5 -69.7 -73.8C-49.5 -98.2 -24.7 -122.1 5.2 -127.3C35.1 -132.5 70.2 -118.9 82.7 -94.6"
+                    fill="#BB004B"></path>
+            </g>
+            <g transform="translate(475.63132293000285 147.25171009538846)" style="visibility: hidden">
+                <path id="blob2"
+                    d="M64.6 -66.4C86.8 -42.4 109.9 -21.2 108.1 -1.8C106.3 17.7 79.7 35.4 57.5 60.4C35.4 85.4 17.7 117.7 -7.8 125.5C-33.2 133.2 -66.5 116.5 -83.3 91.5C-100.1 66.5 -100.6 33.2 -98.7 1.9C-96.8 -29.5 -92.6 -58.9 -75.8 -82.9C-58.9 -106.9 -29.5 -125.5 -4.1 -121.3C21.2 -117.2 42.4 -90.4 64.6 -66.4"
+                    fill="#BB004B"></path>
+            </g>
+            
+        </svg>
+        
+    </section>
+    <div class="spacer layered-peaks-haikei-1"></div>
+    
+    <script>
+        const tween = KUTE.fromTo(
+            '#blob1',
+            { path: '#blob1' },
+            { path: '#blob2' },
+            { repeat: 999, duration: 3000, yoyo: true }
+        ).start();
+    </script>
+</body>
+</html>
